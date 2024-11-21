@@ -1,0 +1,22 @@
+package com.Upwardiq.pavithra.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import ch.qos.logback.core.model.Model;
+
+@Controller
+public class ProductController {
+
+   
+	@GetMapping("/getUploadProductPage")
+    public String getUploadPage() {
+        return "uploadFile";
+    }
+
+    @GetMapping("/getSerchpage")
+    public String getSerchpage(Model model) {
+//    	productService.
+    	return "Searchpage";
+    }
+}

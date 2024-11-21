@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+ body {
+            background-color: #f8f9fa;
+        }
+
+        .file-upload-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .file-upload-box {
+            width: 50%; /* Medium length */
+        }
+
+        .button-group {
+            margin-top: 10px;
+        }
+
+        #dataTable {
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+        }
+
+        table thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }

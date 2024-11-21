@@ -1,0 +1,23 @@
+.side-navbar {
+            min-width: 250px;
+            height: 500px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .side-navbar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            display: block;
+        }
+        .side-navbar a:hover {
+            background-color: #007bff;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #e9ecef;
+        }

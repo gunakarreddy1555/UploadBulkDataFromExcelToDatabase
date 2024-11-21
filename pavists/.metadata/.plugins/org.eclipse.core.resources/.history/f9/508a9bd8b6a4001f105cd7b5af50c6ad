@@ -1,0 +1,98 @@
+<script>
+    $(document).ready(function () {
+        $('#searchForm').on('submit', function (e) {
+            e.preventDefault();
+            const productName = $('#name').val();
+            const productType = $('#productType').val();
+
+            $.ajax({
+                url: '/searchResults',
+                type: 'GET',
+                data: {
+                    productname: productName,
+                    producttype: productType
+                },
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#searchMessage').hide();
+                        let resultsHtml = ` 
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Product Type</th>
+                                    <th>Product Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        `;
+                        data.forEach(function (product) {
+                            resultsHtml += `
+                                <tr>
+                                    <td>${product.productname}</td>
+                                    <td>${product.producttype}</td>
+                                    <td>${product.productprice}</td>
+                                </tr>
+                            `;
+                        });
+                        resultsHtml += '</tbody></table>';
+                        $('#searchResults').html(resultsHtml);
+                        $('#exportButtonDiv').show();  // Show export button when data is available
+                        $('#exportButton').prop('disabled', false); // Re-enable the export button
+                    } else {
+                        $('#searchMessage').show();
+                        $('#searchMessage').text('No data found for the given name and type.').addClass('alert-danger');
+                        $('#searchResults').html('');
+                        $('#exportButtonDiv').hide();  // Hide export button when no data found
+                    }
+                    $('#resultDiv').show();  // Show result div when data is returned
+                },
+                error: function () {
+                    $('#searchMessage').show();
+                    $('#searchMessage').text('An error occurred while fetching the data.').addClass('alert-danger');
+                    $('#resultDiv').hide();
+                }
+            });
+        });
+
+        // Handle export button click
+        $('#exportButton').on('click', function () {
+            const tableData = [];
+            $('#searchResults table tbody tr').each(function () {
+                let row = $(this);
+                let rowData = {
+                    productname: row.find('td').eq(0).text(),
+                    producttype: row.find('td').eq(1).text(),
+                    productprice: row.find('td').eq(2).text()
+                };
+                tableData.push(rowData);
+            });
+
+            // Disable the Export Button
+            $('#exportButton').prop('disabled', true);
+
+            // Hide the search results before exporting
+            $('#resultDiv').hide();
+
+            // Send data to backend for export
+            $.ajax({
+                url: '/exportData',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(tableData),
+                success: function (response) {
+                    // Handle response from the server
+                    alert('Data exported successfully!');
+                    // Hide the search results and show confirmation after success
+                    $('#resultDiv').hide();
+                },
+                error: function () {
+                    // Show search data again if export fails
+                    alert('An error occurred while exporting the data.');
+                    $('#exportButton').prop('disabled', false);  // Re-enable the export button
+                    $('#resultDiv').show();  // Show the search results again if export fails
+                }
+            });
+        });
+    });
+</script>

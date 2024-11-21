@@ -1,0 +1,9 @@
+package com.Upwardiq.pavithra.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ProductController {
+
+   
+}

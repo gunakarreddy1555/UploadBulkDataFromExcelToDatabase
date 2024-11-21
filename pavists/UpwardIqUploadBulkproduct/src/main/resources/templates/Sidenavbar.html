@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Side Nav Bar</title>
+    <link rel="stylesheet" href="Sidenavbar.css" th:href="@{/css/Sidenavbar.css}"/>
+</head>
+<body>
+<header th:fragment="Sidenav">
+   <div class="d-flex">
+        <!-- Side Navbar -->
+        <div class="side-navbar">
+            <a href="getUploadProductPage">Upload Product</a>
+            <a href="getSerchpage">Search Product</a>
+        </div>
+
+       
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </header>
+</body>
+</html>
