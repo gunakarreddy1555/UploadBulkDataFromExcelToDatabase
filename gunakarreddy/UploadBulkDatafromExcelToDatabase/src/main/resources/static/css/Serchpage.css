@@ -1,0 +1,111 @@
+@charset "ISO-8859-1";
+/* General Page Styles */
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Label Styles */
+label {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Input Field Styles */
+input.form-control {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+}
+
+input.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Dropdown Styles */
+select#productType {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    color: #495057;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select#productType:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Placeholder Styles */
+select#productType option[value=""][disabled][selected] {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Buttons */
+button.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Success Message Styles */
+.alert-success {
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #155724;
+}
+select#productType {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23999999" d="M2 0L0 2h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+.sidenav a {
+    padding: 10px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: bold;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: #007bff;
+    color: white;
+}
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

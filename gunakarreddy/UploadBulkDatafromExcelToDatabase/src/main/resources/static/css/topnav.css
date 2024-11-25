@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+.navbar-logo {
+    background-image: url('/images/vcubenav.png'); /* Path to your logo */
+    background-size: contain; /* Ensures the full image fits */
+    background-repeat: no-repeat; /* Prevents repeating of the image */
+    background-position: center; /* Centers the image */
+    height: 200px; /* Adjust height as needed for desktop screens */
+    width: 100%; /* Ensures the navbar spans the full width */
+}
+
+/* Adjust height for smaller screens */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 200px; /* Reduce height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo {
+        height: 150px; /* Further reduce height for very small screens */
+    }
+}
